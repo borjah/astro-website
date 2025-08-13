@@ -1,0 +1,55 @@
+---
+import { Menu } from "@lucide/astro";
+---
+<nav class="w-full py-4 px-6 sticky top-0 z-50 transition-shadow bg-[#1A1527] border-b border-gray-800">
+  <div class="max-w-5xl mx-auto flex justify-between items-center">
+    
+    <!-- Enlace -->
+    <a href="/" class="text-2xl font-semibold text-white hover:text-shadow-md text-shadow-gray-500 transition-colors">
+      borjahidalgoweb.site
+    </a>
+
+    <!-- Menu Principal -->
+    <div class="hidden md:flex space-x-8 text-gray-200 font-medium">
+      <a href="#home" class="hover:text-[#02fd9a] transition-colors">home</a>
+      <a href="#about" class="hover:text-[#02fd9a] transition-colors">about</a>
+      <a href="#skills" class="hover:text-[#02fd9a] transition-colors">skills</a>
+      <a href="#contact" class="hover:text-[#02fd9a] transition-colors">contact</a>
+    </div>
+
+    <!-- Menu Responsivo -->
+    <button id="menu-btn" class="md:hidden text-gray-200 hover:text-amber-300 transition-colors focus:outline-none">
+      <Menu />
+    </button>
+  </div>
+
+  <!-- Menu Responsivo Lista -->
+  <div id="mobile-menu" class="hidden md:hidden flex-col space-y-4 mt-4 text-gray-200 font-medium px-4">
+    <ul>
+      <li class="p-2 hover:bg-[#2B1B3F] hover:text-amber-300 transition-colors">
+        <a href="#home" class="hover:text-amber-300 transition-colors">home</a>
+      </li>
+      <li class="p-2">
+        <a href="#about" class="hover:text-amber-300 transition-colors w-full">about</a>
+      </li>
+      <li class="p-2">
+        <a href="#skills" class="hover:text-amber-300 transition-colors">skills</a>
+      </li>
+      <li class="p-2">
+        <a href="#contact" class="hover:text-amber-300 transition-colors">Contact</a>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    if (menuBtn && mobileMenu){
+      menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+    }
+  </script>
+</nav>
+
+  

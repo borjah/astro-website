@@ -1,0 +1,62 @@
+---
+const skills = [
+  { name: "React.JS", icon: "devicon-react-original colored" },
+  { name: "Next.JS", icon: "devicon-nextjs-plain colored" },
+  { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+  { name: "Python", icon: "devicon-python-plain colored" },
+  { name: "Django", icon: "devicon-django-plain colored" },
+  { name: "MySQL", icon: "devicon-mysql-original colored" },
+  { name: "Flask", icon: "devicon-flask-original colored" },
+  { name: "Astro", icon: "devicon-astro-plain colored" },
+  { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+  { name: "MongoDB", icon: "devicon-mongodb-plain colored" },
+  { name: "Git", icon: "devicon-git-plain colored" },
+  { name: "Tailwind CSS", icon: "devicon-tailwindcss-plain colored" }
+];
+---
+
+<section id="skills" class="snap-start min-h-screen py-20 px-6 sm:px-12 lg:px-32 text-gray-100 flex flex-col justify-center">
+  <div class="max-w-7xl mx-auto">
+    
+    <!-- Header -->
+    <h2 class="text-4xl font-bold mb-10 inline-block pb-2 bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent border-b-4 border-gradient-to-r animate-fade-in">
+      Skills & Technologies
+    </h2>
+    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+      Here’s a glimpse of the tech and tools I use to make ideas happen.
+    </p>
+
+    <!-- Skills grid -->
+    <div 
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 px-4 py-6"
+      role="list"
+      aria-label="List of programming skills and technologies"
+    >
+      {skills.map((skill, index) => (
+        <article
+          role="listitem"
+          class="cursor-pointer flex flex-col items-center bg-white/5 backdrop-blur-md rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:scale-110 hover:shadow-[#02fd9a]/40 hover:shadow-md"
+          aria-label={skill.name}
+          tabindex="0"
+          style={{ animation: `fadeInUp 0.5s ease forwards ${index * 0.05}s`, opacity: 0 }}
+        >
+          <i class={`${skill.icon} text-7xl mb-4 transition-transform duration-300 group-hover:rotate-6`}></i>
+          <p class="text-gray-100 font-semibold text-center">{skill.name}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+</style>

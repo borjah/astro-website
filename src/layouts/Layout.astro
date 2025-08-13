@@ -1,22 +1,46 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Scroll from '../components/Scroll.astro';
+import { ViewTransitions } from 'astro:transitions';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Personal portfolio showcasing my work and skills" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth snap-y snap-mandatory h-full overflow-y-scroll">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <ViewTransitions />
+    <title>{title}</title>
+  </head>
+  <body class=" text-gray-900 dark:text-white  bg-gradient-to-r from-[#1A1527] to-[#2B1B3F]">
+    <Header />
+    <main class="max-w-5xl mx-auto p-6">
+      <Scroll />
+      <slot />
+    </main>
+    <Footer />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'IBM Plex Mono', monospace;
+  }
 </style>

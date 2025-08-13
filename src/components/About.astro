@@ -1,0 +1,59 @@
+---
+import { Code, Lightbulb, Award } from '@lucide/astro';
+---
+
+<section 
+  id="about" 
+  class="snap-start min-h-screen py-20 px-6 sm:px-12 lg:px-32 text-gray-100 flex flex-col justify-center"
+>
+  <h2 
+    class="text-4xl font-bold mb-10 inline-block pb-2 bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent border-b-4 border-gradient-to-r animate-fade-in"
+  >
+    About Me
+  </h2>
+
+  <p class="text-lg max-w-3xl mb-12 leading-relaxed text-gray-300 animate-fade-up">
+    Hi, I’m Borja, a Full Stack Developer with a passion for creating innovative and efficient digital solutions. With expertise in both frontend and backend technologies, I specialize in crafting seamless user experiences and robust application architectures.
+  </p>
+
+  <div class="grid grid-cols-1 gap-10 max-w-5xl">
+    
+    <!-- What I Do -->
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 hover:bg-white/10 transition-all duration-300 shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <Code class="text-[#02fd9a]" size={28} />
+        <h3 class="text-2xl font-semibold">What I Do</h3>
+      </div>
+      <ul class="list-disc list-inside space-y-2 text-gray-200">
+        <li><strong>Frontend Development:</strong> Experienced in building modern and dynamic interfaces with React.js and Angular, paying close attention to user experience and following best practices in HTML, CSS, and modern JavaScript.</li>
+        <li><strong>Backend Development:</strong> Skilled in developing robust and scalable applications with Django, implementing efficient and secure RESTful APIs to seamlessly connect frontend and backend.</li>
+        <li><strong>Database Management:</strong> Proficient in managing and optimizing relational databases like MySQL and non-relational databases like MongoDB, ensuring performance, security, and data integrity.</li>
+      </ul>
+    </div>
+
+    <!-- My Approach -->
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 hover:bg-white/10 transition-all duration-300 shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <Lightbulb class="text-[#02fd9a]" size={28} />
+        <h3 class="text-2xl font-semibold">My Approach</h3>
+      </div>
+      <p class="text-gray-200 leading-relaxed">
+        I thrive on solving complex problems through clean code and creative solutions. Whether working independently or as part of a team, I aim to deliver high-quality results that exceed expectations.
+      </p>
+    </div>
+
+    <!-- Why Choose Me -->
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 hover:bg-white/10 transition-all duration-300 shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <Award class="text-[#02fd9a]" size={28} />
+        <h3 class="text-2xl font-semibold">Why Choose Me?</h3>
+      </div>
+      <ul class="list-disc list-inside space-y-2 text-gray-200">
+        <li>Passionate about learning and adopting the latest technologies.</li>
+        <li>Dedicated to delivering on time and at high standards.</li>
+        <li>Focused on creating impactful digital experiences.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>

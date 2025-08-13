@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+body {
+    /* background-image: url('/src/assets/3254139.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
+    background-color: #1A1527;
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
