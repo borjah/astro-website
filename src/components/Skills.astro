@@ -16,47 +16,51 @@ const skills = [
 ---
 
 <section id="skills" class="snap-start min-h-screen py-20 px-6 sm:px-12 lg:px-32 text-gray-100 flex flex-col justify-center">
-  <div class="max-w-7xl mx-auto">
     
     <!-- Header -->
-    <h2 class="text-4xl font-bold mb-10 inline-block pb-2 bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent border-b-4 border-gradient-to-r animate-fade-in">
-      Skills & Technologies
+    <h2 class="text-4xl font-semibold mb-6 bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent">
+      Habilidades & Tecnologías
     </h2>
-    <p class="text-lg text-gray-300 max-w-3xl mx-auto">
-      Here’s a glimpse of the tech and tools I use to make ideas happen.
+    <p class="text-lg max-w-3xl mb-8 leading-relaxed text-gray-300 animate-fade-up">
+      Estas son algunas de las herramientas con las que disfruto trabajando para dar vida a mis proyectos.
     </p>
 
-    <!-- Skills grid -->
+    <!-- Grid de skills -->
     <div 
-      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 px-4 py-6"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 w-full max-w-6xl mt-4"
       role="list"
-      aria-label="List of programming skills and technologies"
+      aria-label="Lista de habilidades y tecnologías"
     >
       {skills.map((skill, index) => (
         <article
           role="listitem"
-          class="cursor-pointer flex flex-col items-center bg-white/5 backdrop-blur-md rounded-2xl shadow-lg p-6 transform transition-all duration-300 hover:scale-110 hover:shadow-[#02fd9a]/40 hover:shadow-md"
+          class="group flex flex-col items-center justify-center 
+                rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 
+                backdrop-blur-xl shadow-lg p-6 
+                transition-transform duration-300
+                hover:border-[#02fd9a4d]
+                animate-fade-in"
+          style={{ animationDelay: `${index * 0.05}s` }}
           aria-label={skill.name}
           tabindex="0"
-          style={{ animation: `fadeInUp 0.5s ease forwards ${index * 0.05}s`, opacity: 0 }}
         >
-          <i class={`${skill.icon} text-7xl mb-4 transition-transform duration-300 group-hover:rotate-6`}></i>
-          <p class="text-gray-100 font-semibold text-center">{skill.name}</p>
+          <div class="flex items-center justify-center w-16 h-16 rounded-full bg-white/10 group-hover:bg-[#02fd9a]/10 transition-colors duration-300">
+            <i class={`${skill.icon} text-4xl transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110`}></i>
+          </div>
+          <p class="mt-4 text-gray-100 font-semibold text-center text-sm sm:text-base tracking-wide">
+            {skill.name}
+          </p>
         </article>
       ))}
     </div>
-  </div>
 </section>
 
 <style>
-  @keyframes fadeInUp {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .animate-fade-in {
+    animation: fade-in 0.6s ease forwards;
   }
 </style>

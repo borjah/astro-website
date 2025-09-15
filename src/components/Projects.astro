@@ -1,0 +1,70 @@
+---
+import { ExternalLink, Github } from "@lucide/astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+console.log(projects);
+
+export const prerender = true;
+
+---
+
+<section id="projects" class="snap-start min-h-screen py-20 px-6 sm:px-12 lg:px-32 text-gray-100 flex flex-col justify-center">
+  
+  <!-- Heading -->
+  <h2 class="text-4xl font-bold mb-6 inline-block pb-2 bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent border-b-4 border-gradient-to-r animate-fade-in">
+    Mis proyectos
+  </h2>
+  <p class="text-lg max-w-3xl mb-8 leading-relaxed text-gray-300 animate-fade-up">
+    Selección de trabajos personales y colaborativos.
+  </p>
+
+  <!-- Projects container -->
+  <div class="list-view">
+    {projects.map((p, index) => {
+      const { slug, data } = p
+      const { name, url, tags, github } = data;
+
+      return (
+        <article class="project-card group mb-4">
+            <div class="cover">
+              {/* <img src={p.image} alt={`Imagen de ${p.title}`} class="h-44 w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]" loading="lazy" /> */}
+            </div>
+            <div class="content">
+              <h3 class="title">
+                <a class="transition" transition:name={`name-${slug}`}
+                  href={`/proyectos/${slug}`}>
+                  {name}
+                </a>
+              </h3>
+              <p class="desc">{}</p>
+              <div class="tags">
+                {tags.map(t => (
+                  <span class="tag">{t}</span>
+                ))}
+              </div>
+              {
+                url && (
+                  <a href={url} target="_blank" rel="noopener" class="cta cursor-pointer">
+                    <ExternalLink />
+                  </a>
+                )
+              }
+              {
+                github && (
+                  <a href={github} target="_blank" rel="noopener" class="cta cursor-pointer">
+                    <Github />
+                  </a>
+                )
+              }
+            </div>
+        </article>
+      )
+    })}
+  </div>
+
+  <!-- Empty state -->
+  <div id="empty" class="hidden mt-16 rounded-2xl border border-white/10 bg-white/5 p-10 text-center text-white/70">
+    <p class="text-lg">Nada por aquí… prueba con otro término o etiqueta.</p>
+  </div>
+</section>

@@ -9,50 +9,50 @@ import { Code, Lightbulb, Award } from '@lucide/astro';
   <h2 
     class="text-4xl font-bold mb-10 inline-block pb-2 bg-gradient-to-r from-amber-200 via-orange-300 to-amber-200 bg-clip-text text-transparent border-b-4 border-gradient-to-r animate-fade-in"
   >
-    About Me
+    Sobre mí
   </h2>
 
-  <p class="text-lg max-w-3xl mb-12 leading-relaxed text-gray-300 animate-fade-up">
-    Hi, I’m Borja, a Full Stack Developer with a passion for creating innovative and efficient digital solutions. With expertise in both frontend and backend technologies, I specialize in crafting seamless user experiences and robust application architectures.
+  <p class="text-lg max-w-3xl mb-8 leading-relaxed text-gray-300 animate-fade-up">
+    Hola, soy Borja, un desarrollador Full Stack apasionado por crear soluciones digitales innovadoras y eficientes. Con experiencia tanto en tecnologías frontend como backend, me especializo en crear experiencias de usuario fluidas y arquitecturas de aplicaciones robustas.
   </p>
 
-  <div class="grid grid-cols-1 gap-10 max-w-5xl">
+  <div class="grid grid-cols-1 gap-6 max-w-5xl">
     
     <!-- What I Do -->
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 hover:bg-white/10 transition-all duration-300 shadow-md">
+    <div 
+      class="p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 
+                backdrop-blur-xl shadow-lg p-6 
+                transition-transform duration-300
+                hover:border-[#02fd9a4d]
+                animate-fade-in
+                hover:scale-101"
+    >
       <div class="flex items-center gap-3 mb-4">
         <Code class="text-[#02fd9a]" size={28} />
-        <h3 class="text-2xl font-semibold">What I Do</h3>
+        <h3 class="text-2xl font-semibold">Lo que hago</h3>
       </div>
       <ul class="list-disc list-inside space-y-2 text-gray-200">
-        <li><strong>Frontend Development:</strong> Experienced in building modern and dynamic interfaces with React.js and Angular, paying close attention to user experience and following best practices in HTML, CSS, and modern JavaScript.</li>
-        <li><strong>Backend Development:</strong> Skilled in developing robust and scalable applications with Django, implementing efficient and secure RESTful APIs to seamlessly connect frontend and backend.</li>
-        <li><strong>Database Management:</strong> Proficient in managing and optimizing relational databases like MySQL and non-relational databases like MongoDB, ensuring performance, security, and data integrity.</li>
+        <li><strong>Desarrollo Frontend:</strong> Experiencia en la construcción de interfaces modernas y dinámicas con React.js y Angular, prestando especial atención a la experiencia del usuario y siguiendo las mejores prácticas en HTML, CSS y JavaScript moderno.</li>
+        <li><strong>Desarrollo Backend:</strong> Habilidad en el desarrollo de aplicaciones robustas y escalables con Django, implementando APIs RESTful eficientes y seguras para conectar sin problemas el frontend y el backend.</li>
+        <li><strong>Gestión de Bases de Datos:</strong> Competente en la gestión y optimización de bases de datos relacionales como MySQL y bases de datos no relacionales como MongoDB, asegurando rendimiento, seguridad e integridad de datos.</li>
       </ul>
     </div>
 
     <!-- My Approach -->
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 hover:bg-white/10 transition-all duration-300 shadow-md">
+    <div class="p-6 rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/0 
+      backdrop-blur-xl shadow-lg p-6 
+      transition-transform duration-300
+      hover:border-[#02fd9a4d]
+      animate-fade-in
+      hover:scale-101"
+    >
       <div class="flex items-center gap-3 mb-4">
         <Lightbulb class="text-[#02fd9a]" size={28} />
-        <h3 class="text-2xl font-semibold">My Approach</h3>
+        <h3 class="text-2xl font-semibold">Mi enfoque</h3>
       </div>
       <p class="text-gray-200 leading-relaxed">
-        I thrive on solving complex problems through clean code and creative solutions. Whether working independently or as part of a team, I aim to deliver high-quality results that exceed expectations.
+        Trato de transformar ideas en soluciones claras y útiles a través de código sencillo. Ya sea colaborando con un equipo o trabajando por mi cuenta, siempre busco aportar valor y superar lo que se espera.
       </p>
-    </div>
-
-    <!-- Why Choose Me -->
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 hover:bg-white/10 transition-all duration-300 shadow-md">
-      <div class="flex items-center gap-3 mb-4">
-        <Award class="text-[#02fd9a]" size={28} />
-        <h3 class="text-2xl font-semibold">Why Choose Me?</h3>
-      </div>
-      <ul class="list-disc list-inside space-y-2 text-gray-200">
-        <li>Passionate about learning and adopting the latest technologies.</li>
-        <li>Dedicated to delivering on time and at high standards.</li>
-        <li>Focused on creating impactful digital experiences.</li>
-      </ul>
     </div>
 
   </div>
